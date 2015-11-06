@@ -11,7 +11,7 @@ RUN express -e lyndondaily
 RUN cd lyndondaily && npm install
 
 # Start app
-RUN DEBUG=lyndondaily:* npm start
+RUN node app.js
 # Port 3000 for server
 EXPOSE 3000
 
