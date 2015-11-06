@@ -7,11 +7,13 @@ RUN npm install -g express-generator
 RUN npm install -g nodemon
 
 # Set development environment as default
+workdir /opt
 RUN express -e lyndondaily
+ADD app.js /opt/lyndondaily
+ADD package.json /opt/lyndondaily
 RUN cd lyndondaily && npm install
 
-workdir /lyndondaily
-# Port 3000 for server
-EXPOSE 3000
+# Port 80 for server
+EXPOSE 80
 CMD ["nodemon"]
 
