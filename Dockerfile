@@ -6,9 +6,9 @@ MAINTAINER lyndon <snakeliwei@qq.com>
 RUN npm install -g express-generator
 
 # Set development environment as default
-RUN CD /opt
+RUN mkdir /opt && cd /opt
 RUN npm express -e lyndondaily
-RUN CD /opt/lyndondaily
+RUN cd /opt/lyndondaily
 RUN npm install
 RUN npm install nodemon -g
 
