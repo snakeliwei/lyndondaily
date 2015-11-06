@@ -8,8 +8,8 @@ RUN npm install -g nodemon
 
 # Set development environment as default
 RUN express -e lyndondaily
-ADD app.js /lyndondaily
-ADD package.json /lyndondaily
+ADD app.js /lyndondaily/app.js
+ADD package.json /lyndondaily/package.json
 RUN cd lyndondaily && npm install
 
 workdir /lyndondaily
