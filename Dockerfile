@@ -1,4 +1,4 @@
-FROM node
+FROM smebberson/alpine-nodejs
 
 MAINTAINER lyndon <snakeliwei@qq.com>
 
