@@ -8,8 +8,7 @@ RUN npm install -g express-generator
 # Set development environment as default
 RUN mkdir /opt && cd /opt
 RUN express -e lyndondaily
-RUN cd /opt/lyndondaily
-RUN npm install
+RUN cd lyndondaily && npm install
 RUN npm install nodemon -g
 
 WORKDIR /opt/lyndondaily
