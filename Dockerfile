@@ -4,7 +4,6 @@ MAINTAINER lyndon <snakeliwei@qq.com>
 
 # Install express
 RUN npm install -g express-generator
-RUN npm install -g nodemon 
 
 # Set development environment as default
 RUN mkdir /opt && cd /opt
@@ -12,7 +11,7 @@ RUN express -e lyndondaily
 RUN cd lyndondaily && npm install
 
 # Start app
-CMD ["nodemon"]
+RUN DEBUG=lyndondaily:* npm start
 # Port 3000 for server
 EXPOSE 3000
 
