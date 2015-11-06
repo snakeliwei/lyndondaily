@@ -8,12 +8,10 @@ RUN npm install -g nodemon
 
 # Set development environment as default
 RUN express -e lyndondaily
-workdir /lyndondaily
-RUN cd lyndondaily && npm install && npm install wechat --save
-
+RUN cd lyndondaily && npm install && npm install wechat
 ADD app.js /lyndondaily/app.js
 
-
+workdir /lyndondaily
 # Port 80 for server
 EXPOSE 80
 CMD ["nodemon"]
