@@ -2,9 +2,10 @@ FROM alpine
 MAINTAINER lyndon <snakeliwei@qq.com>
 
 # Install Node
-RUN apk --update add nodejs python make g++
+RUN apk --update add nodejs \
+    && rm -rf /var/cache/apk/* \
 # Install express
-RUN npm install -g express-generator \
+    && npm install -g express-generator \
     && npm install -g nodemon \
 
 # Set development environment as default
@@ -15,7 +16,7 @@ RUN npm install -g express-generator \
 
 ADD app.js /lyndondaily/app.js
 
-workdir /lyndondaily
+WORKDIR /lyndondaily
 # Port 80 for server
 EXPOSE 80
 CMD ["nodemon"]
