@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.2
 MAINTAINER lyndon <snakeliwei@qq.com>
 
 # Install Node
@@ -15,9 +15,10 @@ RUN apk --update add nodejs \
     && npm install wechat -save
 
 ADD app.js /lyndondaily/app.js
-
 WORKDIR /lyndondaily
+
 # Port 80 for server
 EXPOSE 80
+
 CMD ["nodemon"]
 
