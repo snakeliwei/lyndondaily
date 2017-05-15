@@ -2,7 +2,7 @@ FROM alpine:3.5
 MAINTAINER lyndon <snakeliwei@qq.com>
 
 # Install Node
-RUN apk --update add nodejs \
+RUN apk add --update --no-cache nodejs \
     && rm -rf /var/cache/apk/* \
     && npm install -g express-generator \
 
