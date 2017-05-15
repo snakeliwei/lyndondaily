@@ -4,7 +4,7 @@ MAINTAINER lyndon <snakeliwei@qq.com>
 # Install Node
 RUN apk --update add nodejs \
     && rm -rf /var/cache/apk/* \
-    && npm install -g express-generator
+    && npm install -g express-generator \
 
 # Set development environment as default
     && express -e lyndondaily \
